@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputWord = prompt("Enter the word to check:");
+
+    showMessage(isPalindrome(inputWord));
+
+    function showMessage(status) {
+        if(status==true){
+            alert("Word is palindrome");
+        }else
+        alert("Word is not palindrome");
+    }
+
+    function isPalindrome(word) {
+        //check voi for
+        let arrStatus = [];
+        for(let i = 0;i<word.length/2;i++){
+            let statusEachCharacter;
+            if(word[i]==word[word.length-1-i]){
+                statusEachCharacter = true;
+            }else {
+                statusEachCharacter = false;
+            }
+            arrStatus.push(statusEachCharacter);
+        }
+        if(arrStatus.indexOf(false)!=-1){
+            return false;
+        }else return true;
+    }
+</script>
+</body>
+</html>
